@@ -1,0 +1,1277 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nguyen Anh - Portfolios &amp; Virtual Assistant Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/_sdk/element_sdk.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&amp;family=DM+Sans:wght@400;500;600&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        box-sizing: border-box;
+      }
+      * {
+        font-family: "DM Sans", sans-serif;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      .heading-font {
+        font-family: "Outfit", sans-serif;
+      }
+      .stroke-text {
+        -webkit-text-stroke: 2px currentColor;
+        -webkit-text-fill-color: transparent;
+      }
+      .nav-link {
+        position: relative;
+      }
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: currentColor;
+        transition: width 0.3s ease;
+      }
+      .nav-link:hover::after {
+        width: 100%;
+      }
+      .skill-card {
+        transition: all 0.3s ease;
+      }
+      .skill-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+      }
+      .service-card {
+        transition: all 0.3s ease;
+      }
+      .service-card:hover {
+        transform: scale(1.02);
+      }
+      .testimonial-card {
+        transition: all 0.3s ease;
+      }
+      .testimonial-card:hover {
+        transform: translateY(-4px);
+      }
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+      .float-animation {
+        animation: float 3s ease-in-out infinite;
+      }
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .fade-in-up {
+        animation: fadeInUp 0.6s ease forwards;
+      }
+      .delay-1 {
+        animation-delay: 0.1s;
+      }
+      .delay-2 {
+        animation-delay: 0.2s;
+      }
+      .delay-3 {
+        animation-delay: 0.3s;
+      }
+      .delay-4 {
+        animation-delay: 0.4s;
+      }
+      input,
+      textarea {
+        transition: all 0.3s ease;
+      }
+      input:focus,
+      textarea:focus {
+        outline: none;
+        border-color: #000;
+        box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
+      }
+    </style>
+    <style>
+      @view-transition {
+        navigation: auto;
+      }
+    </style>
+    <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  </head>
+  <body class="h-full bg-white text-black">
+    <div id="app" class="w-full h-full overflow-auto">
+      <!-- Navigation -->
+      <nav
+        class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm z-50 border-b border-gray-100"
+      >
+        <div
+          class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between"
+        >
+          <a href="#" class="text-2xl font-bold heading-font">Personal</a>
+          <div class="hidden md:flex items-center gap-8">
+            <a href="#about" class="nav-link text-sm font-medium">About Me</a>
+            <a href="#skills" class="nav-link text-sm font-medium">Skills</a>
+            <a href="#services" class="nav-link text-sm font-medium"
+              >Services</a
+            >
+            <a href="#experience" class="nav-link text-sm font-medium"
+              >Experience</a
+            >
+            <a href="#contact" class="nav-link text-sm font-medium">Contact</a>
+          </div>
+          <a
+            href="#contact"
+            class="bg-black text-white px-6 py-2.5 text-sm font-medium hover:bg-gray-800 transition-colors"
+          >
+            Hire Me
+          </a>
+        </div>
+      </nav>
+      <!-- Hero Section -->
+      <section class="min-h-screen pt-24 pb-16 px-6 flex items-center">
+        <div
+          class="max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-12 items-center"
+        >
+          <div class="fade-in-up">
+            <div class="mb-8">
+              <p
+                class="text-lg md:text-xl text-gray-400 font-light tracking-wide mb-2"
+              >
+                Hello, I'm
+              </p>
+              <h1
+                class="text-5xl md:text-6xl lg:text-7xl leading-none heading-font font-black mb-4"
+              >
+                <span id="hero-name">Anh Nguyen.</span>
+              </h1>
+              <div class="flex items-center gap-3 mb-4">
+                <div class="w-12 h-0.5 bg-black"></div>
+                <p
+                  id="hero-location"
+                  class="text-sm font-medium tracking-widest uppercase text-gray-600"
+                >
+                  Based in VietNam
+                </p>
+              </div>
+              <p
+                id="hero-tagline"
+                class="text-xl md:text-2xl text-gray-600 font-light leading-relaxed max-w-xl"
+              >
+                <span class="font-semibold text-black">Virtual Assistant</span>,
+                <span class="font-semibold text-black">Social Media Account Operator</span>
+                 &amp;
+                 <span class="font-semibold text-black">AI & Data Support Freelancer</span>.
+              </p>
+              <p class="mt-3 text-sm text-gray-500 max-w-xl">
+                Experienced in Instagram & Threads account operation • AI content & image tasks • Data entry • Excel & Google Sheets
+            </p>
+            </div>
+            <p
+              id="hero-description"
+              class="text-lg text-gray-600 mb-8 max-w-lg leading-relaxed"
+            >
+              I help businesses manage social media accounts, perform data entry, generate AI content, and handle repetitive online tasks with high accuracy and consistency.
+                Experienced in social media account warming, posting, engagement, AI tools, and spreadsheet management.
+            </p>
+            <div class="flex items-center gap-6">
+              <a
+                href="#contact"
+                class="bg-black text-white px-8 py-3.5 font-medium hover:bg-gray-800 transition-colors inline-flex items-center gap-2"
+              >
+                Get In Touch
+                <svg
+                  class="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewbox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M17 8l4 4m0 0l-4 4m4-4H3"
+                  /></svg
+              ></a>
+              <div class="flex items-center gap-4">
+                <a
+                  href="https://www.linkedin.com/in/%C3%A1nh-nguy%E1%BB%85n-874969382/?trk=opento_sprofile_details"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="w-10 h-10 border border-gray-300 flex items-center justify-center hover:bg-black hover:text-white hover:border-black transition-all"
+                  aria-label="LinkedIn"
+                >
+                  <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24">
+                    <path
+                      d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                    /></svg
+                ></a>
+                <a
+                  href="https://mail.google.com/mail/?view=cm&to=nguyenanh3823@gmail.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="w-10 h-10 border border-gray-300 flex items-center justify-center hover:bg-black hover:text-white hover:border-black transition-all"
+                  aria-label="Email"
+                >
+                  <svg
+                    class="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewbox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                    /></svg
+                ></a>
+                <a
+                  href="https://www.upwork.com/freelancers/~0153c2f1f05ce49480"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="w-10 h-10 border border-gray-300 flex items-center justify-center hover:bg-black hover:text-white hover:border-black transition-all"
+                  aria-label="Upwork"
+                >
+                  <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24">
+                    <path
+                      d="M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.228-1.076.008-.042c.207-1.143.849-3.06 2.839-3.06 1.492 0 2.703 1.212 2.703 2.703-.001 1.489-1.212 2.702-2.704 2.702zm0-8.14c-2.539 0-4.51 1.649-5.31 4.366-1.22-1.834-2.148-4.036-2.687-5.892H7.828v7.112c-.002 1.406-1.141 2.546-2.547 2.546-1.405 0-2.543-1.14-2.543-2.546V3.492H0v7.112c0 2.914 2.37 5.303 5.281 5.303 2.913 0 5.283-2.389 5.283-5.303v-1.19c.529 1.107 1.182 2.229 1.974 3.221l-1.673 7.873h2.797l1.213-5.71c1.063.679 2.285 1.109 3.686 1.109 3 0 5.439-2.452 5.439-5.45 0-3-2.439-5.439-5.439-5.439z"
+                    /></svg
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div class="relative flex justify-center lg:justify-end">
+            <div class="float-animation">
+              <img
+                src="img/avt.jpg"
+                alt="Hero Profile Image"
+                class="w-80 h-80 lg:w-96 lg:h-96 object-cover rounded-2xl shadow-2xl img-placeholder"
+                onerror="this.style.backgroundColor='#f3f4f6'; this.alt='Add your image URL';"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Skills Section -->
+      <section id="skills" class="py-20 px-6 bg-gray-50">
+        <div class="max-w-7xl mx-auto">
+          <div class="text-center mb-16">
+            <p
+              class="text-sm font-medium text-gray-500 mb-2 tracking-wider uppercase"
+            >
+              What I'm good at
+            </p>
+            <h2 class="text-4xl md:text-5xl font-bold heading-font">
+              My Skills
+            </h2>
+          </div>
+          <div class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+            <div class="skill-card border border-gray-200 bg-white p-6 md:p-8">
+              <div class="w-12 h-12 mb-4 flex items-center justify-center">
+                <svg class="w-10 h-10" viewbox="0 0 48 48" fill="none">
+                  <rect
+                    x="8"
+                    y="8"
+                    width="32"
+                    height="32"
+                    rx="4"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                  <path
+                    d="M16 20h16M16 28h12"
+                    stroke="#000"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </div>
+              <h3 class="text-lg font-semibold heading-font">AI Data Entry & Accuracy Tasks</h3>
+              <p class="text-sm text-gray-500 mt-2">
+                Experience handling instruction-based data entry and AI-related tasks,
+                ensuring strict accuracy, consistency, and quality control for repetitive workflows.
+              </p>
+            </div>
+            <div
+              class="skill-card border-2 border-black bg-black text-white p-6 md:p-8"
+            >
+              <div class="w-12 h-12 mb-4 flex items-center justify-center">
+                <svg class="w-10 h-10" viewbox="0 0 48 48" fill="none">
+                  <rect
+                    x="6"
+                    y="10"
+                    width="36"
+                    height="28"
+                    rx="2"
+                    stroke="#fff"
+                    stroke-width="2"
+                  />
+                  <path
+                    d="M6 18h36M18 18v20M30 18v20"
+                    stroke="#fff"
+                    stroke-width="2"
+                  />
+                  <path
+                    d="M10 14h4M22 14h4M34 14h4"
+                    stroke="#22c55e"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </div>
+              <h3 class="text-lg font-semibold heading-font">
+                Microsoft Excel & Data Processing
+              </h3>
+              <p class="text-sm text-gray-300 mt-2">
+                Skilled in organizing, cleaning, and formatting large datasets using Excel,
+                including formulas, filters, and structured data preparation.
+              </p>
+            </div>
+            <div class="skill-card border border-gray-200 bg-white p-6 md:p-8">
+              <div class="w-12 h-12 mb-4 flex items-center justify-center">
+                <svg class="w-10 h-10" viewbox="0 0 48 48" fill="none">
+                  <rect
+                    x="6"
+                    y="10"
+                    width="36"
+                    height="28"
+                    rx="2"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                  <path
+                    d="M6 18h36M18 18v20M30 18v20"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                  <circle cx="24" cy="14" r="2" fill="#22c55e" />
+                </svg>
+              </div>
+              <h3 class="text-lg font-semibold heading-font">Google Sheets & Collaboration</h3>
+              <p class="text-sm text-gray-500 mt-2">
+                Proficient in managing shared spreadsheets, tracking tasks,
+                and maintaining real-time data accuracy in collaborative environments.
+              </p>
+            </div>
+            <div class="skill-card border border-gray-200 bg-white p-6 md:p-8">
+              <div class="w-12 h-12 mb-4 flex items-center justify-center">
+                <svg class="w-10 h-10" viewbox="0 0 48 48" fill="none">
+                  <rect
+                    x="8"
+                    y="12"
+                    width="32"
+                    height="24"
+                    rx="2"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                  <rect
+                    x="12"
+                    y="20"
+                    width="6"
+                    height="6"
+                    rx="1"
+                    stroke="#000"
+                    stroke-width="1.5"
+                  />
+                  <rect
+                    x="21"
+                    y="20"
+                    width="6"
+                    height="6"
+                    rx="1"
+                    stroke="#000"
+                    stroke-width="1.5"
+                  />
+                  <rect
+                    x="30"
+                    y="20"
+                    width="6"
+                    height="6"
+                    rx="1"
+                    stroke="#000"
+                    stroke-width="1.5"
+                  />
+                  <rect
+                    x="16"
+                    y="28"
+                    width="16"
+                    height="4"
+                    rx="1"
+                    stroke="#000"
+                    stroke-width="1.5"
+                  />
+                </svg>
+              </div>
+              <h3 class="text-lg font-semibold heading-font">Social Media Account Operation</h3>
+              <p class="text-sm text-gray-500 mt-2">
+                Experience operating and warming social media accounts by logging in,
+                browsing feeds, creating interactions, and posting content naturally
+                to simulate real human behavior.
+              </p>
+            </div>
+            <div class="skill-card border border-gray-200 bg-white p-6 md:p-8">
+              <div class="w-12 h-12 mb-4 flex items-center justify-center">
+                <svg class="w-10 h-10" viewbox="0 0 48 48" fill="none">
+                  <circle
+                    cx="24"
+                    cy="24"
+                    r="16"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                  <circle
+                    cx="24"
+                    cy="24"
+                    r="6"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                  <path
+                    d="M24 8v4M24 36v4M8 24h4M36 24h4"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+              <h3 class="text-lg font-semibold heading-font">Web Research & Data Collection</h3>
+              <p class="text-sm text-gray-500 mt-2">
+                Reliable online research to collect structured data, contact information,
+                and reference materials with high accuracy.
+              </p>
+            </div>
+            <div class="skill-card border border-gray-200 bg-white p-6 md:p-8">
+              <div class="w-12 h-12 mb-4 flex items-center justify-center">
+                <svg class="w-10 h-10" viewbox="0 0 48 48" fill="none">
+                  <path
+                    d="M12 8h18l8 10v22a2 2 0 01-2 2H12a2 2 0 01-2-2V10a2 2 0 012-2z"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                  <path d="M30 8v10h8" stroke="#000" stroke-width="2" />
+                  <path
+                    d="M20 26l4 4 4-4M24 30v-8"
+                    stroke="#000"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <h3 class="text-lg font-semibold heading-font">
+                Document Conversion (PDF to Excel/Word)
+              </h3>
+              <p class="text-sm text-gray-500 mt-2">
+                Precise conversion of PDFs into editable Word or Excel files,
+                maintaining layout, structure, and data integrity.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Experience Section -->
+      <section id="experience" class="py-20 px-6 bg-black text-white">
+        <div class="max-w-7xl mx-auto">
+          <div class="text-center mb-16">
+            <p
+              class="text-sm font-medium text-gray-400 mb-2 tracking-wider uppercase"
+            >
+              Where I've worked
+            </p>
+            <h2 class="text-4xl md:text-5xl font-bold heading-font">
+              My Experience
+            </h2>
+          </div>
+          <div class="space-y-6">
+            <div
+              class="border border-gray-700 p-6 md:p-8 hover:border-gray-500 transition-colors"
+            >
+              <div
+                class="flex flex-col md:flex-row md:items-start md:justify-between gap-4"
+              >
+                <div class="flex items-start gap-4">
+                  <div
+                    class="w-12 h-12 bg-white text-black flex items-center justify-center flex-shrink-0"
+                  >
+                    <svg
+                      class="w-6 h-6"
+                      fill="currentColor"
+                      viewbox="0 0 24 24"
+                    >
+                      <path
+                        d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
+                      />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 class="text-xl font-semibold heading-font">
+                      Social Media Account Operator
+                    </h3>
+                    <p class="text-gray-400">Threads / Instagram – Remote</p>
+                  </div>
+                </div>
+                <span class="text-sm text-gray-500 font-medium"
+                  >9/2025 - 12/2025</span
+                >
+              </div>
+              <ul class="mt-4 ml-16 space-y-2 text-gray-300">
+                <li class="flex items-start gap-2">
+                  <span class="text-green-500 mt-1">✓</span> Logged into and managed multiple Threads accounts daily
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-green-500 mt-1">✓</span> Created organic engagement by scrolling, liking, replying like a real user
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-green-500 mt-1">✓</span> Posted content following schedules and platform rules
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-green-500 mt-1">✓</span> Maintained account safety and consistency over 4 months
+                </li>
+              </ul>
+            </div>
+            <div
+              class="border border-gray-700 p-6 md:p-8 hover:border-gray-500 transition-colors"
+            >
+              <div
+                class="flex flex-col md:flex-row md:items-start md:justify-between gap-4"
+              >
+                <div class="flex items-start gap-4">
+                  <div
+                    class="w-12 h-12 bg-white text-black flex items-center justify-center flex-shrink-0"
+                  >
+                    <svg
+                      class="w-6 h-6"
+                      fill="currentColor"
+                      viewbox="0 0 24 24"
+                    >
+                      <path d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 class="text-xl font-semibold heading-font">
+                      Data Entry & Virtual Assistant (Part-time)
+                    </h3>
+                    <p class="text-gray-400">Easy Class Education Technology Limited Liability Company</p>
+                  </div>
+                </div>
+                <span class="text-sm text-gray-500 font-medium"
+                  >5/2025 - 11/2025</span
+                >
+              </div>
+              <ul class="mt-4 ml-16 space-y-2 text-gray-300">
+                <li class="flex items-start gap-2">
+                  <span class="text-green-500 mt-1">✓</span> Entered and managed vocabulary and educational data for learning platforms
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-green-500 mt-1">✓</span> Tested and reviewed websites and mobile applications to identify input and display issues
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-green-500 mt-1">✓</span> Created lecture slides using PowerPoint and prepared listening materials
+                </li>
+                <li class="flex items-start gap-2">
+                    <span class="text-green-500 mt-1">✓</span>
+                        Input and organized exam questions and test content with high accuracy
+                </li>
+
+                <li class="flex items-start gap-2">
+                     <span class="text-green-500 mt-1">✓</span>
+                        Followed detailed instructions and handled repetitive data tasks consistently
+                </li> 
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- About Me Section -->
+      <section id="about" class="py-20 px-6">
+        <div class="max-w-7xl mx-auto">
+          <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div class="flex justify-center">
+              <div
+                class="w-72 h-72 md:w-80 md:h-80 bg-gray-100 rounded-2xl overflow-hidden relative"
+              >
+                <svg viewbox="0 0 320 320" class="w-full h-full">
+                  <rect width="320" height="320" fill="#f3f4f6" />
+                  <circle cx="160" cy="120" r="50" fill="#e5e7eb" />
+                  <circle cx="145" cy="110" r="5" fill="#374151" />
+                  <circle cx="175" cy="110" r="5" fill="#374151" />
+                  <path
+                    d="M145 135 Q160 150 175 135"
+                    stroke="#374151"
+                    stroke-width="3"
+                    fill="none"
+                  />
+                  <rect
+                    x="120"
+                    y="170"
+                    width="80"
+                    height="100"
+                    fill="#000"
+                    rx="8"
+                  />
+                  <rect
+                    x="90"
+                    y="175"
+                    width="35"
+                    height="60"
+                    fill="#000"
+                    rx="6"
+                  />
+                  <rect
+                    x="195"
+                    y="175"
+                    width="35"
+                    height="60"
+                    fill="#000"
+                    rx="6"
+                  />
+                  <rect
+                    x="130"
+                    y="260"
+                    width="25"
+                    height="50"
+                    fill="#374151"
+                    rx="4"
+                  />
+                  <rect
+                    x="165"
+                    y="260"
+                    width="25"
+                    height="50"
+                    fill="#374151"
+                    rx="4"
+                  />
+                  <!-- Decorative elements -->
+                  <circle cx="60" cy="60" r="20" fill="#000" opacity="0.1" />
+                  <circle cx="280" cy="280" r="30" fill="#000" opacity="0.1" />
+                  <rect
+                    x="250"
+                    y="50"
+                    width="40"
+                    height="40"
+                    fill="#000"
+                    opacity="0.1"
+                    rx="4"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div>
+              <p
+                class="text-sm font-medium text-gray-500 mb-2 tracking-wider uppercase"
+              >
+                Get to know me
+              </p>
+              <h2 class="text-4xl md:text-5xl font-bold heading-font mb-6">
+                About Me
+              </h2>
+              <p
+                id="about-paragraph-1"
+                class="text-gray-600 leading-relaxed mb-4"
+              >
+                I am a reliable and detail-oriented Virtual Assistant and Data Entry Freelancer
+                with hands-on experience supporting social media accounts and educational platforms.
+                I focus on accuracy, consistency, and following instructions to deliver high-quality results.
+              </p>
+              <p
+                id="about-paragraph-2"
+                class="text-gray-600 leading-relaxed mb-6"
+              >
+                I have experience handling data entry tasks, content posting, account activity management,
+                spreadsheet work, and basic testing for web and mobile applications.
+                I am comfortable with repetitive tasks and able to work independently for long hours.
+              </p>
+              <div class="grid grid-cols-3 gap-6 pt-6 border-t border-gray-200">
+                <div>
+                  <p class="text-3xl font-bold heading-font">4+</p>
+                  <p class="text-sm text-gray-500">Months Experience</p>
+                </div>
+                <div>
+                  <p class="text-3xl font-bold heading-font">30+</p>
+                  <p class="text-sm text-gray-500">Hours / Week Available</p>
+                </div>
+                <div>
+                  <p class="text-3xl font-bold heading-font">100%</p>
+                  <p class="text-sm text-gray-500">Task Commitment</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Services Section -->
+      <section id="services" class="py-20 px-6 bg-black text-white">
+        <div class="max-w-7xl mx-auto">
+          <div class="text-center mb-16">
+            <p
+              class="text-sm font-medium text-gray-400 mb-2 tracking-wider uppercase"
+            >
+              What I offer
+            </p>
+            <h2 class="text-4xl md:text-5xl font-bold heading-font">
+              My Services
+            </h2>
+          </div>
+          <div class="grid md:grid-cols-2 gap-6">
+            <div
+              class="service-card border border-gray-700 p-8 group hover:border-white transition-colors"
+            >
+              <div class="flex items-start justify-between mb-6">
+                <span
+                  class="text-6xl font-bold text-gray-700 heading-font group-hover:text-gray-500 transition-colors"
+                  >01</span
+                >
+                <svg
+                  class="w-8 h-8 opacity-50 group-hover:opacity-100 transition-opacity"
+                  fill="none"
+                  stroke="currentColor"
+                  viewbox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M17 8l4 4m0 0l-4 4m4-4H3"
+                  />
+                </svg>
+              </div>
+              <h3 class="text-2xl font-semibold heading-font mb-3">
+                Social Media Account Management
+              </h3>
+              <p class="text-gray-400">
+                Account warming, posting, engagement, reposting content, and daily activity handling for Instagram, Threads, TikTok.
+              </p>
+            </div>
+            <div
+              class="service-card border border-gray-700 p-8 group hover:border-white transition-colors"
+            >
+              <div class="flex items-start justify-between mb-6">
+                <span
+                  class="text-6xl font-bold text-gray-700 heading-font group-hover:text-gray-500 transition-colors"
+                  >02</span
+                >
+                <svg
+                  class="w-8 h-8 opacity-50 group-hover:opacity-100 transition-opacity"
+                  fill="none"
+                  stroke="currentColor"
+                  viewbox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M17 8l4 4m0 0l-4 4m4-4H3"
+                  />
+                </svg>
+              </div>
+              <h3 class="text-2xl font-semibold heading-font mb-3">
+                AI Content & Image Tasks
+              </h3>
+              <p class="text-gray-400">
+                AI prompt-based content writing and image generation following strict guidelines and formats.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Contact Section -->
+      <section id="contact" class="py-20 px-6">
+        <div class="max-w-7xl mx-auto">
+          <div class="grid lg:grid-cols-2 gap-12">
+            <div>
+              <p
+                class="text-sm font-medium text-gray-500 mb-2 tracking-wider uppercase"
+              >
+                Get in touch
+              </p>
+              <h2 class="text-4xl md:text-5xl font-bold heading-font mb-6">
+                Let's Work Together
+              </h2>
+              <p id="contact-cta" class="text-gray-600 leading-relaxed mb-8">
+                Let's work together on data entry, social media support, and virtual assistant tasks.
+                I'm available for freelance projects and long-term collaboration.
+              </p>
+              <div class="space-y-4">
+                <div class="flex items-center gap-4">
+                  <div
+                    class="w-12 h-12 bg-black text-white flex items-center justify-center"
+                  >
+                    <svg
+                      class="w-5 h-5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewbox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                      />
+                    </svg>
+                  </div>
+                  <div>
+                    <p class="text-sm text-gray-500">Email</p>
+                    <p id="contact-email-display" class="font-medium">
+                      nguyenanh3823@email.com
+                    </p>
+                  </div>
+                </div>
+                <div class="flex items-center gap-4">
+                  <div
+                    class="w-12 h-12 bg-black text-white flex items-center justify-center"
+                  >
+                    <svg
+                      class="w-5 h-5"
+                      fill="currentColor"
+                      viewbox="0 0 24 24"
+                    >
+                      <path
+                        d="M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.228-1.076.008-.042c.207-1.143.849-3.06 2.839-3.06 1.492 0 2.703 1.212 2.703 2.703-.001 1.489-1.212 2.702-2.704 2.702zm0-8.14c-2.539 0-4.51 1.649-5.31 4.366-1.22-1.834-2.148-4.036-2.687-5.892H7.828v7.112c-.002 1.406-1.141 2.546-2.547 2.546-1.405 0-2.543-1.14-2.543-2.546V3.492H0v7.112c0 2.914 2.37 5.303 5.281 5.303 2.913 0 5.283-2.389 5.283-5.303v-1.19c.529 1.107 1.182 2.229 1.974 3.221l-1.673 7.873h2.797l1.213-5.71c1.063.679 2.285 1.109 3.686 1.109 3 0 5.439-2.452 5.439-5.45 0-3-2.439-5.439-5.439-5.439z"
+                      />
+                    </svg>
+                  </div>
+                  <div>
+                    <p class="text-sm text-gray-500">Upwork</p>
+                    <p class="font-medium">Open to new projects</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="bg-gray-50 p-8">
+              <form
+                action="https://formspree.io/f/mrebogvz"
+                method="POST"
+                class="space-y-5"
+              >
+                <input
+                  type="hidden"
+                  name="_next"
+                  value="https://NguyenAnh3823.github.io/my-portfolio/thankyou.html"
+                />
+                <!-- Tiêu đề email khi gửi tới bạn -->
+                <input
+                  type="hidden"
+                  name="_subject"
+                  value="New message from Portfolio"
+                />
+                <div>
+                  <label for="name" class="block text-sm font-medium mb-2"
+                    >Your Name</label
+                  >
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                    class="w-full px-4 py-3 border border-gray-300 bg-white focus:ring-2 focus:ring-black"
+                    placeholder="John Doe"
+                  />
+                </div>
+                <div>
+                  <label for="email" class="block text-sm font-medium mb-2"
+                    >Email Address</label
+                  >
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    class="w-full px-4 py-3 border border-gray-300 bg-white focus:ring-2 focus:ring-black"
+                    placeholder="john@example.com"
+                  />
+                </div>
+                <div>
+                  <label for="project" class="block text-sm font-medium mb-2"
+                    >Project Type</label
+                  >
+                  <select
+                    id="project"
+                    name="project"
+                    class="w-full px-4 py-3 border border-gray-300 bg-white focus:ring-2 focus:ring-black"
+                  >
+                    <option value="data-entry">Data Entry</option>
+                    <option value="social-media">Social Media Account Support</option>
+                    <option value="excel">Excel / Google Sheets</option>
+                    <option value="research">Web Research</option>
+                    <option value="conversion">PDF / Image Conversion</option>
+                    <option value="virtual-assistant">Virtual Assistant Tasks</option>
+                    <option value="other">Other</option>
+
+                  </select>
+                </div>
+                <div>
+                  <label for="message" class="block text-sm font-medium mb-2"
+                    >Your Message</label
+                  >
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows="4"
+                    required
+                    class="w-full px-4 py-3 border border-gray-300 bg-white resize-none focus:ring-2 focus:ring-black"
+                    placeholder="Tell me about your task, workload, and expected timeline..."
+                  ></textarea>
+                </div>
+                <button
+                  type="submit"
+                  id="submit-btn"
+                  class="w-full bg-black text-white py-4 font-medium hover:bg-gray-800 transition-colors flex items-center justify-center gap-2"
+                >
+                  Send Message
+                  <svg
+                    class="w-4 h-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewbox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M17 8l4 4m0 0l-4 4m4-4H3"
+                    />
+                  </svg>
+                </button>
+                <p id="form-message" class="text-center text-sm hidden"></p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Footer -->
+      <footer class="py-12 px-6 bg-black text-white">
+        <div class="max-w-7xl mx-auto">
+          <div
+            class="flex flex-col md:flex-row items-center justify-between gap-6"
+          >
+            <div class="flex items-center gap-3">
+              <span class="text-2xl font-bold heading-font">Personal</span>
+              <span class="text-gray-500">|</span>
+              <span class="text-sm text-gray-400"
+                >Available for Freelance Work</span
+              >
+            </div>
+            <div class="flex items-center gap-6">
+              <a
+                href="#"
+                class="text-gray-400 hover:text-white transition-colors"
+                aria-label="LinkedIn"
+              >
+                <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24">
+                  <path
+                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                  /></svg
+              ></a>
+              <a
+                href="#"
+                class="text-gray-400 hover:text-white transition-colors"
+                aria-label="Email"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewbox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                  /></svg
+              ></a>
+              <a
+                href="#"
+                class="text-gray-400 hover:text-white transition-colors"
+                aria-label="Upwork"
+              >
+                <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24">
+                  <path
+                    d="M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.228-1.076.008-.042c.207-1.143.849-3.06 2.839-3.06 1.492 0 2.703 1.212 2.703 2.703-.001 1.489-1.212 2.702-2.704 2.702zm0-8.14c-2.539 0-4.51 1.649-5.31 4.366-1.22-1.834-2.148-4.036-2.687-5.892H7.828v7.112c-.002 1.406-1.141 2.546-2.547 2.546-1.405 0-2.543-1.14-2.543-2.546V3.492H0v7.112c0 2.914 2.37 5.303 5.281 5.303 2.913 0 5.283-2.389 5.283-5.303v-1.19c.529 1.107 1.182 2.229 1.974 3.221l-1.673 7.873h2.797l1.213-5.71c1.063.679 2.285 1.109 3.686 1.109 3 0 5.439-2.452 5.439-5.45 0-3-2.439-5.439-5.439-5.439z"
+                  /></svg
+              ></a>
+            </div>
+          </div>
+          <div class="mt-8 pt-8 border-t border-gray-800 text-center">
+            <p class="text-sm text-gray-500">
+              © 2019–2025 Personal. All rights reserved.
+            </p>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script>
+      const defaultConfig = {
+        hero_name: "Evren Shah.",
+        hero_title: "Data Entry & Virtual Assistant",
+        hero_location: "Based in India.",
+        hero_description:
+          "I help businesses manage data accurately, efficiently, and on time. Experienced in handling large volumes of information with attention to detail.",
+        about_paragraph_1:
+          "I am a detail-oriented Data Entry Freelancer with experience supporting businesses, e-commerce stores, and entrepreneurs. I focus on accuracy, speed, and clear communication to deliver high-quality results.",
+        about_paragraph_2:
+          "Since 2019, I have worked on multiple data-related tasks including spreadsheet management, online research, and document formatting.",
+        contact_email: "evren.shah@email.com",
+        contact_cta:
+          "Let's work together on your data tasks. I'm available for freelance projects and long-term collaborations.",
+        primary_color: "#000000",
+        secondary_color: "#f9fafb",
+        text_color: "#374151",
+        accent_color: "#000000",
+        font_family: "Outfit",
+        font_size: 16,
+      };
+
+      async function onConfigChange(config) {
+        // Hero section
+        document.getElementById("hero-name").textContent =
+          config.hero_name || defaultConfig.hero_name;
+        document.getElementById("hero-location").textContent =
+          config.hero_location || defaultConfig.hero_location;
+        document.getElementById(
+          "hero-tagline"
+        ).innerHTML = `A Software Engineering student turned <span class="font-semibold text-black">Virtual Assistant</span> & <span class="font-semibold text-black">Data Support Freelancer</span>.`;
+        document.getElementById("hero-description").textContent =
+          config.hero_description || defaultConfig.hero_description;
+
+        // About section
+        document.getElementById("about-paragraph-1").textContent =
+          config.about_paragraph_1 || defaultConfig.about_paragraph_1;
+        document.getElementById("about-paragraph-2").textContent =
+          config.about_paragraph_2 || defaultConfig.about_paragraph_2;
+
+        // Contact section
+        document.getElementById("contact-email-display").textContent =
+          config.contact_email || defaultConfig.contact_email;
+        document.getElementById("contact-cta").textContent =
+          config.contact_cta || defaultConfig.contact_cta;
+
+        // Apply colors
+        const primaryColor =
+          config.primary_color || defaultConfig.primary_color;
+        const secondaryColor =
+          config.secondary_color || defaultConfig.secondary_color;
+        const textColor = config.text_color || defaultConfig.text_color;
+        const accentColor = config.accent_color || defaultConfig.accent_color;
+
+        document.documentElement.style.setProperty(
+          "--primary-color",
+          primaryColor
+        );
+        document.documentElement.style.setProperty(
+          "--secondary-color",
+          secondaryColor
+        );
+        document.documentElement.style.setProperty("--text-color", textColor);
+        document.documentElement.style.setProperty(
+          "--accent-color",
+          accentColor
+        );
+
+        // Apply font
+        const fontFamily = config.font_family || defaultConfig.font_family;
+        const baseFontStack = "DM Sans, sans-serif";
+        document
+          .querySelectorAll(".heading-font, h1, h2, h3, h4, h5, h6")
+          .forEach((el) => {
+            el.style.fontFamily = `${fontFamily}, ${baseFontStack}`;
+          });
+
+        // Apply font size scaling
+        const baseSize = config.font_size || defaultConfig.font_size;
+        document.body.style.fontSize = `${baseSize}px`;
+      }
+
+      function mapToCapabilities(config) {
+        return {
+          recolorables: [
+            {
+              get: () => config.primary_color || defaultConfig.primary_color,
+              set: (value) => {
+                config.primary_color = value;
+                if (window.elementSdk)
+                  window.elementSdk.setConfig({ primary_color: value });
+              },
+            },
+            {
+              get: () =>
+                config.secondary_color || defaultConfig.secondary_color,
+              set: (value) => {
+                config.secondary_color = value;
+                if (window.elementSdk)
+                  window.elementSdk.setConfig({ secondary_color: value });
+              },
+            },
+            {
+              get: () => config.text_color || defaultConfig.text_color,
+              set: (value) => {
+                config.text_color = value;
+                if (window.elementSdk)
+                  window.elementSdk.setConfig({ text_color: value });
+              },
+            },
+            {
+              get: () => config.accent_color || defaultConfig.accent_color,
+              set: (value) => {
+                config.accent_color = value;
+                if (window.elementSdk)
+                  window.elementSdk.setConfig({ accent_color: value });
+              },
+            },
+          ],
+          borderables: [],
+          fontEditable: {
+            get: () => config.font_family || defaultConfig.font_family,
+            set: (value) => {
+              config.font_family = value;
+              if (window.elementSdk)
+                window.elementSdk.setConfig({ font_family: value });
+            },
+          },
+          fontSizeable: {
+            get: () => config.font_size || defaultConfig.font_size,
+            set: (value) => {
+              config.font_size = value;
+              if (window.elementSdk)
+                window.elementSdk.setConfig({ font_size: value });
+            },
+          },
+        };
+      }
+
+      function mapToEditPanelValues(config) {
+        return new Map([
+          ["hero_name", config.hero_name || defaultConfig.hero_name],
+          ["hero_title", config.hero_title || defaultConfig.hero_title],
+          [
+            "hero_location",
+            config.hero_location || defaultConfig.hero_location,
+          ],
+          [
+            "hero_description",
+            config.hero_description || defaultConfig.hero_description,
+          ],
+          [
+            "about_paragraph_1",
+            config.about_paragraph_1 || defaultConfig.about_paragraph_1,
+          ],
+          [
+            "about_paragraph_2",
+            config.about_paragraph_2 || defaultConfig.about_paragraph_2,
+          ],
+          [
+            "contact_email",
+            config.contact_email || defaultConfig.contact_email,
+          ],
+          ["contact_cta", config.contact_cta || defaultConfig.contact_cta],
+        ]);
+      }
+
+      // Initialize SDK
+      if (window.elementSdk) {
+        window.elementSdk.init({
+          defaultConfig,
+          onConfigChange,
+          mapToCapabilities,
+          mapToEditPanelValues,
+        });
+      }
+
+      // Smooth scroll for navigation
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        });
+      });
+
+      // Form handling
+      document
+        .getElementById("contact-form")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          const btn = document.getElementById("submit-btn");
+          const msg = document.getElementById("form-message");
+
+          btn.innerHTML = "Sending...";
+          btn.disabled = true;
+
+          setTimeout(() => {
+            btn.innerHTML = `Message Sent! <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>`;
+            msg.textContent = "Thank you! I'll get back to you soon.";
+            msg.className = "text-center text-sm text-green-600";
+            this.reset();
+
+            setTimeout(() => {
+              btn.innerHTML = `Send Message <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>`;
+              btn.disabled = false;
+              msg.className = "text-center text-sm hidden";
+            }, 3000);
+          }, 1500);
+        });
+    </script>
+    <script>
+      (function () {
+        function c() {
+          var b = a.contentDocument || a.contentWindow.document;
+          if (b) {
+            var d = b.createElement("script");
+            d.innerHTML =
+              "window.__CF$cv$params={r:'9b604bab51c6dd53',t:'MTc2NzA4NDY4OS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";
+            b.getElementsByTagName("head")[0].appendChild(d);
+          }
+        }
+        if (document.body) {
+          var a = document.createElement("iframe");
+          a.height = 1;
+          a.width = 1;
+          a.style.position = "absolute";
+          a.style.top = 0;
+          a.style.left = 0;
+          a.style.border = "none";
+          a.style.visibility = "hidden";
+          document.body.appendChild(a);
+          if ("loading" !== document.readyState) c();
+          else if (window.addEventListener)
+            document.addEventListener("DOMContentLoaded", c);
+          else {
+            var e = document.onreadystatechange || function () {};
+            document.onreadystatechange = function (b) {
+              e(b);
+              "loading" !== document.readyState &&
+                ((document.onreadystatechange = e), c());
+            };
+          }
+        }
+      })();
+    </script>
+  </body>
+</html>
